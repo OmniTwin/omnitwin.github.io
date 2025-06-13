@@ -3,41 +3,243 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OmniTwin – Privacy‑First Enterprise Agents</title>
+  <title>OmniTwin – We Recommend, You Decide</title>
   <link rel="icon" href="/public/OmniTwin-logo.png">
   <style>
-    html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial}
-    .wrapper{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;background:#0f1b2c;color:#fff;text-align:center}
-    img{width:160px;margin-bottom:32px;filter:drop-shadow(0 0 12px #09f)}
-    h1{font-size:2.6rem;font-weight:600;margin:0}
-    p{max-width:460px;line-height:1.4;margin:18px auto}
-    form{margin-top:24px}
-    input[type=email]{padding:12px 14px;border-radius:4px;border:none;width:240px;margin-right:8px}
-    button{padding:12px 18px;border:none;border-radius:4px;background:#0070f3;color:#fff;font-weight:600;cursor:pointer}
-    footer{position:absolute;bottom:18px;font-size:0.8rem;opacity:.7}
-    footer a{color:#fff;text-decoration:none;margin:0 6px}
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+    
+    /* Main layout */
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #0f1b2c;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    
+    /* Logo styling */
+    .logo {
+      width: 160px;
+      height: auto;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 0 12px #2B7CD3);
+    }
+    
+    /* Typography */
+    .main-headline {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      color: #fff;
+    }
+    
+    .hero-tagline {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 500;
+      margin: 0 0 1.5rem 0;
+      color: #2B7CD3;
+      max-width: 600px;
+    }
+    
+    .description {
+      max-width: 460px;
+      line-height: 1.6;
+      margin: 0 auto 2rem auto;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: #e0e6ed;
+    }
+    
+    /* Form styling */
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .email-input {
+      padding: 12px 16px;
+      border-radius: 6px;
+      border: 2px solid #374151;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      width: 100%;
+      max-width: 280px;
+      font-size: 1rem;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+    
+    .email-input:focus {
+      outline: none;
+      border-color: #2B7CD3;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .email-input::placeholder {
+      color: #9CA3AF;
+    }
+    
+    .submit-button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      background: #2B7CD3;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      min-width: 160px;
+    }
+    
+    .submit-button:hover {
+      background: #1d5bb8;
+      transform: translateY(-1px);
+    }
+    
+    .submit-button:active {
+      transform: translateY(0);
+    }
+    
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.85rem;
+      opacity: 0.7;
+      text-align: center;
+    }
+    
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: opacity 0.2s ease;
+    }
+    
+    .footer a:hover {
+      opacity: 1;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 640px) {
+      .wrapper {
+        padding: 1.5rem 1rem;
+      }
+      
+      .logo {
+        width: 120px;
+        margin-bottom: 1.5rem;
+      }
+      
+      .signup-form {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .email-input {
+        max-width: 100%;
+      }
+      
+      .footer {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 3rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main-headline {
+        font-size: 1.6rem;
+      }
+      
+      .hero-tagline {
+        font-size: 1rem;
+      }
+      
+      .description {
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      .email-input {
+        border-color: #fff;
+      }
+      
+      .submit-button {
+        background: #fff;
+        color: #0f1b2c;
+      }
+    }
+    
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+      
+      .submit-button:hover {
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <img src="/CorporateLogo.png" alt="OmniTwin logo">
-    <h1>Enterprise Automation You Can Trust</h1>
-    html<br><h1 class="hero">OmniTwin creates workflow intelligence that always asks before it acts.</h1> css<br>.hero{white-space:nowrap;} 
-     
-    <p> Sign up to follow our progress and get early‑access invites.</p>
-
-    <!-- simple email capture via Formspree (no backend needed) -->
-    <form action="https://formspree.io/f/mjkrwrvb" method="POST">
-      <input type="email" name="email" placeholder="you@company.com" required>
-      <button type="submit">Keep me posted</button>
+    <img src="/CorporateLogo.png" alt="OmniTwin logo" class="logo">
     
-  <!-- optional extras -->
-  <input type="hidden" name="_subject" value="New early-access signup">
-  <input type="hidden" name="_next" value="https://omnitwin.ai/thanks.html">
-</form>
-
-    <footer>
-      <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a>
+    <h1 class="main-headline">We Recommend, You Decide</h1>
+    
+    <p class="hero-tagline">OmniTwin creates workflow intelligence that always asks before it acts.</p>
+    
+    <p class="description">
+      Sign up to follow our progress and get early-access invites to AI that demonstrates before it executes.
+    </p>
+    
+    <form action="https://formspree.io/f/mjkrwrvb" method="POST" class="signup-form">
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="you@company.com" 
+        required 
+        class="email-input"
+        aria-label="Email address"
+      >
+      <button type="submit" class="submit-button">Keep me posted</button>
+      
+      <!-- Hidden form fields -->
+      <input type="hidden" name="_subject" value="New early-access signup">
+      <input type="hidden" name="_next" value="https://omnitwin.ai/thanks.html">
+    </form>
+    
+    <footer class="footer">
+      <a href="/privacy.html">Privacy</a>
+      <span>|</span>
+      <a href="/terms.html">Terms</a>
     </footer>
   </div>
 </body>
