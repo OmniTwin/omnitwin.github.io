@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <title>OmniTwin – We Recommend, You Decide</title>
   <link rel="icon" href="/public/OmniTwin-logo.png">
   <style>
@@ -17,6 +19,18 @@
       height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
       line-height: 1.5;
+      /* iOS Safari fixes */
+      -webkit-text-size-adjust: 100%;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* iOS safe area support */
+    @supports (padding-top: env(safe-area-inset-top)) {
+      html, body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
     }
     
     /* Main layout */
@@ -26,11 +40,33 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      min-height: 100dvh; /* Dynamic viewport height for modern browsers */
       background: #0f1b2c;
       color: #fff;
       text-align: center;
       padding: 2rem 1rem 80px 1rem;
       box-sizing: border-box;
+      /* iOS Safari specific fixes */
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* iOS Safari viewport fix */
+    @supports (-webkit-touch-callout: none) {
+      .wrapper {
+        min-height: -webkit-fill-available;
+      }
+      
+      html {
+        height: -webkit-fill-available;
+      }
+    }
+    
+    /* Prevent flash of unstyled content on iOS */
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+      body {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
     }
     
     /* Logo styling */
