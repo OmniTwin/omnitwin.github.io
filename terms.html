@@ -2,59 +2,323 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Terms of Use | OmniTwin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service – OmniTwin Technologies</title>
+  <link rel="icon" href="/public/OmniTwin-logo.png">
   <style>
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial;margin:0;padding:24px;line-height:1.55;color:#111}
-    h1,h2{color:#0052cc;margin-top:24px}
-    a{color:#0052cc}
-    footer{margin-top:48px;font-size:.9rem;color:#666}
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8fafc;
+    }
+    
+    /* Header */
+    .header {
+      background: #0f1b2c;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      width: 120px;
+      height: auto;
+      filter: drop-shadow(0 0 8px #2B7CD3);
+    }
+    
+    .nav-link {
+      color: #2B7CD3;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    
+    .nav-link:hover {
+      color: #fff;
+    }
+    
+    /* Main content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
+    
+    h1 {
+      color: #0f1b2c;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    h2 {
+      color: #2B7CD3;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    
+    h3 {
+      color: #374151;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      color: #4b5563;
+    }
+    
+    ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+      color: #4b5563;
+    }
+    
+    .contact-info {
+      background: #f3f4f6;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 2rem 0;
+      border-left: 4px solid #2B7CD3;
+    }
+    
+    .contact-info h3 {
+      margin-top: 0;
+      color: #2B7CD3;
+    }
+    
+    .effective-date {
+      background: #eff6ff;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    
+    .important-notice {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      border-radius: 6px;
+      padding: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .important-notice p {
+      margin: 0;
+      color: #92400e;
+      font-weight: 500;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #0f1b2c;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .footer a {
+      color: #2B7CD3;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.2s ease;
+    }
+    
+    .footer a:hover {
+      color: #fff;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Website Terms of Use</h1>
-  <p>Effective date: <strong>12 June 2025</strong></p>
+  <header class="header">
+    <div class="header-content">
+      <img src="/CorporateLogo.png" alt="OmniTwin logo" class="logo">
+      <a href="/" class="nav-link">← Back to Home</a>
+    </div>
+  </header>
 
-  <h2>1. Acceptance</h2>
-  <p>By accessing <code>https://omnitwin.ai</code> (the “<strong>Site</strong>”) you agree to these Website Terms of
-     Use (“<strong>Terms</strong>”). If you do not agree, do not use the Site.</p>
+  <div class="container">
+    <h1>Terms of Service</h1>
+    <p class="subtitle">OmniTwin Technologies Inc.</p>
+    
+    <div class="effective-date">
+      Effective Date: June 13, 2025
+    </div>
 
-  <h2>2. Content</h2>
-  <p>All content on the Site, including the OmniTwin name, logo, text, graphics, and design, is owned by
-     OmniTwin, Inc. or its licensors and is protected by intellectual-property laws. We grant you a limited,
-     revocable, non-exclusive license to view the Site for informational purposes only.</p>
+    <div class="important-notice">
+      <p><strong>Important:</strong> Please read these Terms of Service carefully before using our website or services. By accessing or using our services, you agree to be bound by these terms.</p>
+    </div>
 
-  <h2>3. Prohibited uses</h2>
-  <ul>
-    <li>Reverse-engineering or attempting to derive the source code of any portion of the Site.</li>
-    <li>Scraping, automated data collection, or framing the Site without our written consent.</li>
-    <li>Using the Site for unlawful, harmful, or fraudulent purposes.</li>
-  </ul>
+    <h2>1. Acceptance of Terms</h2>
+    <p>These Terms of Service ("Terms") constitute a legal agreement between you and OmniTwin Technologies Inc., a Delaware corporation ("OmniTwin," "we," "us," or "our"). By accessing or using our website, services, or any related applications, you agree to comply with and be bound by these Terms.</p>
+    
+    <p>If you do not agree to these Terms, you may not access or use our services.</p>
 
-  <h2>4. Disclaimer; no warranty</h2>
-  <p>THE SITE AND ALL CONTENT ARE PROVIDED “AS IS” WITHOUT WARRANTIES OF ANY KIND. OMNITWIN DISCLAIMS ALL IMPLIED
-     WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+    <h2>2. Description of Service</h2>
+    <p>OmniTwin is developing AI-powered workflow intelligence and orchestration platform technology that learns how users work and recommends improvements with complete user control and approval. Our platform operates on the principle of "We Recommend, You Decide," ensuring users maintain control over all automated actions.</p>
+    
+    <p>Currently, our website provides information about our upcoming services and allows users to sign up for early access notifications. As we are in the development phase, our full service offerings are not yet available for general use.</p>
 
-  <h2>5. Limitation of liability</h2>
-  <p>To the maximum extent permitted by law, OmniTwin will not be liable for any indirect, incidental, special,
-     or consequential damages arising out of or related to your use of the Site.</p>
+    <h2>3. User Accounts and Registration</h2>
+    <p>To receive updates and early access information, you may provide your email address through our website. By providing your information, you represent and warrant that:</p>
+    <ul>
+      <li>All information you provide is accurate and complete</li>
+      <li>You are at least 18 years of age</li>
+      <li>You have the legal capacity to enter into these Terms</li>
+    </ul>
 
-  <h2>6. Third-party links</h2>
-  <p>The Site may contain links to third-party websites; we are not responsible for their content.</p>
+    <h2>4. Acceptable Use Policy</h2>
+    <p>You agree to use our website and services only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+    <ul>
+      <li>Use our services for any illegal or unauthorized purpose</li>
+      <li>Violate any applicable local, state, national, or international law</li>
+      <li>Transmit any harmful, threatening, abusive, or offensive content</li>
+      <li>Attempt to gain unauthorized access to our systems or networks</li>
+      <li>Interfere with or disrupt our services or servers</li>
+      <li>Use automated systems to access our website without permission</li>
+    </ul>
 
-  <h2>7. Changes</h2>
-  <p>We may modify these Terms at any time by posting a revised version. Continuing to use the Site indicates
-     acceptance of the updated Terms.</p>
+    <h2>5. Intellectual Property Rights</h2>
+    <p>All content, features, and functionality on our website and services, including but not limited to text, graphics, logos, images, and software, are the exclusive property of OmniTwin or its licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+    
+    <p>You may not modify, copy, distribute, transmit, display, reproduce, or create derivative works from our content without our express written permission.</p>
 
-  <h2>8. Governing law</h2>
-  <p>These Terms are governed by the laws of the State of California, without regard to conflict-of-law
-     principles.</p>
+    <h2>6. Privacy Policy</h2>
+    <p>Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference. Please review our Privacy Policy to understand our data practices.</p>
 
-  <h2>9. Contact</h2>
-  <p>Questions about these Terms? Email <a href="mailto:legal@omnitwin.ai">legal@omnitwin.ai</a>.</p>
+    <h2>7. Disclaimers</h2>
+    <p>Our website and services are provided "as is" and "as available" without warranties of any kind, either express or implied. To the fullest extent permitted by law, we disclaim all warranties, including but not limited to:</p>
+    <ul>
+      <li>Implied warranties of merchantability and fitness for a particular purpose</li>
+      <li>Warranties regarding the accuracy, reliability, or completeness of content</li>
+      <li>Warranties that our services will be uninterrupted or error-free</li>
+    </ul>
 
-  <footer>
-    &copy; 2025 OmniTwin, Inc.  |  <a href="/privacy.html">Privacy Policy</a>
+    <h2>8. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, OmniTwin shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+    <ul>
+      <li>Your use or inability to use our services</li>
+      <li>Any unauthorized access to or use of our servers and/or personal information</li>
+      <li>Any interruption or cessation of transmission to or from our services</li>
+      <li>Any bugs, viruses, or similar harmful code transmitted through our services</li>
+    </ul>
+
+    <h2>9. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold harmless OmniTwin, its officers, directors, employees, agents, and affiliates from and against any claims, damages, costs, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to:</p>
+    <ul>
+      <li>Your use of our services</li>
+      <li>Your violation of these Terms</li>
+      <li>Your violation of any third-party rights</li>
+      <li>Any content you submit or transmit through our services</li>
+    </ul>
+
+    <h2>10. Termination</h2>
+    <p>We may terminate or suspend your access to our services immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms.</p>
+    
+    <p>You may discontinue your use of our services at any time. To unsubscribe from our communications, you may contact us or use the unsubscribe links provided in our emails.</p>
+
+    <h2>11. Governing Law and Jurisdiction</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law provisions. Any legal suit, action, or proceeding arising out of or related to these Terms shall be instituted exclusively in the state or federal courts located in Delaware.</p>
+
+    <h2>12. Changes to Terms</h2>
+    <p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+    
+    <p>Your continued use of our services after such changes constitutes acceptance of the updated Terms.</p>
+
+    <h2>13. Severability</h2>
+    <p>If any provision of these Terms is held to be invalid or unenforceable, such provision shall be struck and the remaining provisions shall remain in full force and effect.</p>
+
+    <h2>14. Entire Agreement</h2>
+    <p>These Terms, together with our Privacy Policy, constitute the sole and entire agreement between you and OmniTwin regarding our services and supersede all prior understandings, agreements, or representations.</p>
+
+    <h2>15. Contact Information</h2>
+    <p>If you have any questions about these Terms, please contact us:</p>
+
+    <div class="contact-info">
+      <h3>Legal Contact Information</h3>
+      <p><strong>For terms and legal inquiries:</strong></p>
+      <p>Email: <a href="mailto:legal@omnitwin.ai" style="color: #2B7CD3;">legal@omnitwin.ai</a></p>
+      
+      <p><strong>Mailing Address:</strong></p>
+      <p>OmniTwin Technologies Inc.<br>
+      19 East Bay Blvd.<br>
+      The Woodlands, TX 77380<br>
+      United States</p>
+      
+      <p><strong>Legal Entity:</strong> Delaware Corporation</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 OmniTwin Technologies Inc. All rights reserved.</p>
+    <div>
+      <a href="/">Home</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
   </footer>
 </body>
 </html>
