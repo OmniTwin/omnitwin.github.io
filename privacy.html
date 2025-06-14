@@ -2,35 +2,281 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Privacy Policy | OmniTwin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy – OmniTwin Technologies</title>
+  <link rel="icon" href="/public/OmniTwin-logo.png">
   <style>
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial;margin:0;padding:24px;line-height:1.55;color:#111}
-    h1,h2{color:#0052cc;margin-top:24px}
-    a{color:#0052cc}
-    footer{margin-top:48px;font-size:.9rem;color:#666}
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8fafc;
+    }
+    
+    /* Header */
+    .header {
+      background: #0f1b2c;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      width: 120px;
+      height: auto;
+      filter: drop-shadow(0 0 8px #2B7CD3);
+    }
+    
+    .nav-link {
+      color: #2B7CD3;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    
+    .nav-link:hover {
+      color: #fff;
+    }
+    
+    /* Main content */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
+    
+    h1 {
+      color: #0f1b2c;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    h2 {
+      color: #2B7CD3;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    
+    h3 {
+      color: #374151;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      color: #4b5563;
+    }
+    
+    ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+      color: #4b5563;
+    }
+    
+    .contact-info {
+      background: #f3f4f6;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 2rem 0;
+      border-left: 4px solid #2B7CD3;
+    }
+    
+    .contact-info h3 {
+      margin-top: 0;
+      color: #2B7CD3;
+    }
+    
+    .effective-date {
+      background: #eff6ff;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #1e40af;
+      font-weight: 500;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #0f1b2c;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .footer a {
+      color: #2B7CD3;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.2s ease;
+    }
+    
+    .footer a:hover {
+      color: #fff;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p>Last updated: <strong>12 June 2025</strong></p>
+  <header class="header">
+    <div class="header-content">
+      <img src="/CorporateLogo.png" alt="OmniTwin logo" class="logo">
+      <a href="/" class="nav-link">← Back to Home</a>
+    </div>
+  </header>
 
-  <h2>1. Who we are</h2>
-  <p>OmniTwin, Inc. (“<strong>OmniTwin</strong>,” “we,” or “us”) operates the website located at
-     <code>https://omnitwin.ai</code> (the “<strong>Site</strong>”). This Privacy Policy describes how we collect,
-     use, and share information when you visit the Site.</p>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">OmniTwin Technologies Inc.</p>
+    
+    <div class="effective-date">
+      Effective Date: June 13, 2025
+    </div>
 
-  <h2>2. Information we collect</h2>
-  <ul>
-    <li><strong>Email address</strong> you voluntarily provide when you join our early-access list.</li>
-    <li><strong>Basic device information</strong> automatically sent by your browser (IP address, user-agent).</li>
-  </ul>
+    <h2>1. Introduction</h2>
+    <p>OmniTwin Technologies Inc. ("OmniTwin," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.</p>
+    
+    <p>Our mission is to create AI workflow intelligence that respects user privacy and maintains complete transparency about data handling. This commitment to privacy-first design is fundamental to our business philosophy of "We Recommend, You Decide."</p>
 
-  <h2>3. How we use information</h2>
-  <ul>
-    <li>To send periodic updates and early-access invitations you request.</li>
-    <li>To maintain the security and performance of the Site.</li>
-  </ul>
+    <h2>2. Information We Collect</h2>
+    
+    <h3>2.1 Information You Provide Directly</h3>
+    <p>We collect information you voluntarily provide to us, including:</p>
+    <ul>
+      <li><strong>Email Address:</strong> When you sign up for our mailing list or early access notifications</li>
+      <li><strong>Communications:</strong> When you contact us directly via email or other means</li>
+    </ul>
 
-  <h2>4. How we share information</h2>
-  <p>We do <em>not</em> sell or rent your information. We share it only w
+    <h3>2.2 Automatically Collected Information</h3>
+    <p>Currently, we do not use cookies, analytics, or tracking technologies on our website. We may implement privacy-respecting analytics in the future, and this policy will be updated accordingly with advance notice.</p>
+
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the information we collect for the following purposes:</p>
+    <ul>
+      <li>To provide you with updates about our product development and early access opportunities</li>
+      <li>To respond to your inquiries and provide customer support</li>
+      <li>To improve our website and services</li>
+      <li>To comply with legal obligations</li>
+    </ul>
+
+    <h2>4. Information Sharing and Disclosure</h2>
+    <p>We do not sell, trade, or otherwise transfer your personal information to third parties, except in the following circumstances:</p>
+    <ul>
+      <li><strong>Service Providers:</strong> We use Formspree to process contact form submissions. Formspree's privacy practices are governed by their own privacy policy</li>
+      <li><strong>Legal Requirements:</strong> We may disclose your information if required by law or in response to valid legal process</li>
+      <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or asset sale, your information may be transferred as part of that transaction</li>
+    </ul>
+
+    <h2>5. Data Security</h2>
+    <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+
+    <h2>6. Data Retention</h2>
+    <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+
+    <h2>7. Your Rights</h2>
+    <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+    <ul>
+      <li>The right to access your personal information</li>
+      <li>The right to correct inaccurate information</li>
+      <li>The right to delete your information</li>
+      <li>The right to opt-out of marketing communications</li>
+    </ul>
+    
+    <p>To exercise these rights, please contact us using the information provided below.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>Our services are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.</p>
+
+    <h2>9. International Data Transfers</h2>
+    <p>Your information may be transferred to and processed in countries other than your country of residence. We ensure that such transfers are conducted in accordance with applicable data protection laws.</p>
+
+    <h2>10. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the updated policy on our website and updating the "Effective Date" above. Your continued use of our services after such changes constitutes acceptance of the updated policy.</p>
+
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><strong>For privacy-related inquiries:</strong></p>
+      <p>Email: <a href="mailto:privacy@omnitwin.ai" style="color: #2B7CD3;">privacy@omnitwin.ai</a></p>
+      
+      <p><strong>For general legal inquiries:</strong></p>
+      <p>Email: <a href="mailto:legal@omnitwin.ai" style="color: #2B7CD3;">legal@omnitwin.ai</a></p>
+      
+      <p><strong>Mailing Address:</strong></p>
+      <p>OmniTwin Technologies Inc.<br>
+      19 East Bay Blvd.<br>
+      The Woodlands, TX 77380<br>
+      United States</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 OmniTwin Technologies Inc. All rights reserved.</p>
+    <div>
+      <a href="/">Home</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+  </footer>
+</body>
+</html>
