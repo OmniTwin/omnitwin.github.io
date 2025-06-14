@@ -29,7 +29,8 @@
       background: #0f1b2c;
       color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 80px 1rem;
+      box-sizing: border-box;
     }
     
     /* Logo styling */
@@ -121,14 +122,10 @@
     
     /* Footer */
     .footer {
-      position: fixed;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
+      margin-top: 3rem;
       font-size: 0.85rem;
       opacity: 0.7;
       text-align: center;
-      z-index: 10;
     }
     
     .footer a {
@@ -145,7 +142,7 @@
     /* Mobile responsiveness */
     @media (max-width: 640px) {
       .wrapper {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 1rem 2rem 1rem;
       }
       
       .logo {
@@ -162,14 +159,6 @@
       
       .email-input {
         max-width: 100%;
-      }
-      
-      .footer {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin-top: 3rem;
       }
     }
     
