@@ -26,11 +26,13 @@
       -webkit-tap-highlight-color: transparent;
     }
     
-    /* iOS safe area support - apply to wrapper instead of html/body */
+    /* iOS safe area support - use margins instead of padding */
     @supports (padding-top: env(safe-area-inset-top)) {
       .wrapper {
-        padding-top: calc(2rem + env(safe-area-inset-top));
-        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+        margin-top: env(safe-area-inset-top);
+        margin-bottom: env(safe-area-inset-bottom);
+        min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        min-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
       }
     }
     
