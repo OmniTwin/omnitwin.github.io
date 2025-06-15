@@ -19,17 +19,18 @@
       height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
       line-height: 1.5;
+      background: #0f1b2c; /* Ensure background extends everywhere */
       /* iOS Safari fixes */
       -webkit-text-size-adjust: 100%;
       -webkit-touch-callout: none;
       -webkit-tap-highlight-color: transparent;
     }
     
-    /* iOS safe area support */
+    /* iOS safe area support - apply to wrapper instead of html/body */
     @supports (padding-top: env(safe-area-inset-top)) {
-      html, body {
-        padding-top: env(safe-area-inset-top);
-        padding-bottom: env(safe-area-inset-bottom);
+      .wrapper {
+        padding-top: calc(2rem + env(safe-area-inset-top));
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
       }
     }
     
