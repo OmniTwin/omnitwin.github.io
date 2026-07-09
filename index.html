@@ -5,273 +5,389 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>OmniTwin – We Recommend, You Decide</title>
-  <link rel="icon" href="/public/OmniTwin-logo.png">
+  <script>document.documentElement.className += ' js';</script>
+  <title>OmniTwin — Workflow Intelligence &amp; AI Governance</title>
+  <meta name="description" content="OmniTwin reveals the work that happens between your systems of record — invisible to dashboards, RPA and process mining — automates what matters, and governs every AI action.">
+  <link rel="icon" href="/favicon.png">
+  <meta property="og:title" content="OmniTwin — Workflow Intelligence &amp; AI Governance">
+  <meta property="og:description" content="Reveal the work hidden between your enterprise systems, automate what matters, and govern every AI action.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://omnitwin.ai/">
+  <meta property="og:image" content="https://omnitwin.ai/hero.jpg">
+  <meta name="theme-color" content="#0b1524">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    /* Reset and base styles */
-    * {
-      box-sizing: border-box;
+    :root {
+      --navy: #0b1524;
+      --navy-2: #0a1220;
+      --blue: #2b7cd3;
+      --blue-bright: #4f9bef;
+      --blue-glow: rgba(43, 124, 211, 0.5);
+      --ink: #ffffff;
+      --ink-soft: #c6d2e2;
+      --ink-faint: #9db0c7;
+      --line: rgba(255, 255, 255, 0.09);
+      --card: rgba(255, 255, 255, 0.035);
+      --card-hover: rgba(255, 255, 255, 0.06);
+      --maxw: 1120px;
     }
-    
-    html, body {
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
-      line-height: 1.5;
-      background: #0f1b2c; /* Ensure background extends everywhere */
-      /* iOS Safari fixes */
-      -webkit-text-size-adjust: 100%;
-      -webkit-touch-callout: none;
-      -webkit-tap-highlight-color: transparent;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6; color: var(--ink-soft); background: var(--navy);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+      -webkit-tap-highlight-color: transparent; overflow-x: hidden;
     }
-    
-    /* iOS safe area support - use margins instead of padding */
-    @supports (padding-top: env(safe-area-inset-top)) {
-      .wrapper {
-        margin-top: env(safe-area-inset-top);
-        margin-bottom: env(safe-area-inset-bottom);
-        min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-        min-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-      }
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -2;
+      background:
+        radial-gradient(70rem 46rem at 82% -6%, rgba(43,124,211,0.26), transparent 60%),
+        radial-gradient(52rem 44rem at 4% 16%, rgba(43,124,211,0.10), transparent 55%),
+        linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
     }
-    
-    /* Main layout */
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      min-height: 100dvh; /* Dynamic viewport height for modern browsers */
-      background: #0f1b2c;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem 80px 1rem;
-      box-sizing: border-box;
-      /* iOS Safari specific fixes */
-      -webkit-overflow-scrolling: touch;
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: -1; opacity: 0.5;
+      background-image: radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.28), transparent),
+        radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,0.20), transparent),
+        radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.22), transparent),
+        radial-gradient(1px 1px at 35% 75%, rgba(255,255,255,0.15), transparent),
+        radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.18), transparent);
     }
-    
-    /* iOS Safari viewport fix */
-    @supports (-webkit-touch-callout: none) {
-      .wrapper {
-        min-height: -webkit-fill-available;
-      }
-      
-      html {
-        height: -webkit-fill-available;
-      }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* Accessibility */
+    .skip { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--blue); color: #fff; padding: 10px 16px; border-radius: 8px; }
+    .skip:focus { left: 12px; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 3px; border-radius: 6px; }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(140%) blur(14px); -webkit-backdrop-filter: saturate(140%) blur(14px);
+      background: rgba(11, 21, 36, 0.6); border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, background 0.3s ease;
     }
-    
-    /* Prevent flash of unstyled content on iOS */
-    @media screen and (-webkit-min-device-pixel-ratio: 2) {
-      body {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-      }
-    }
-    
-    /* Logo styling */
-    .logo {
-      width: 160px;
-      height: auto;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 0 12px #2B7CD3);
-    }
-    
-    /* Typography */
-    .main-headline {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 600;
-      margin: 0 0 1rem 0;
-      color: #fff;
-    }
-    
-    .hero-tagline {
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      font-weight: 500;
-      margin: 0 0 1.5rem 0;
-      color: #2B7CD3;
-      max-width: 600px;
-    }
-    
-    .description {
-      max-width: 460px;
-      line-height: 1.6;
-      margin: 0 auto 2rem auto;
-      font-size: clamp(0.95rem, 2vw, 1.1rem);
-      color: #e0e6ed;
-    }
-    
-    /* Form styling */
-    .signup-form {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 0.75rem;
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    
-    .email-input {
-      padding: 12px 16px;
-      border-radius: 6px;
-      border: 2px solid #374151;
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      flex: 1;
-      min-width: 200px;
-      font-size: 1rem;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
-    }
-    
-    .email-input:focus {
-      outline: none;
-      border-color: #2B7CD3;
-      background: rgba(255, 255, 255, 0.1);
-    }
-    
-    .email-input::placeholder {
-      color: #9CA3AF;
-    }
-    
-    .submit-button {
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      background: #2B7CD3;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.1s ease;
-      min-width: 160px;
-    }
-    
-    .submit-button:hover {
-      background: #1d5bb8;
-      transform: translateY(-1px);
-    }
-    
-    .submit-button:active {
-      transform: translateY(0);
-    }
-    
+    .site-header.scrolled { border-bottom-color: var(--line); background: rgba(11,21,36,0.82); }
+    .nav { position: relative; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .brand { display: flex; align-items: center; gap: 9px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; font-size: 1.08rem; }
+    .brand img { width: 27px; height: 27px; object-fit: contain; }
+    .nav-center { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 34px; }
+    .nav-center a { color: var(--ink-faint); font-size: 0.94rem; font-weight: 500; transition: color 0.2s ease; }
+    .nav-center a:hover { color: var(--ink); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .nav-cta { padding: 9px 18px; border-radius: 999px; background: var(--blue); color: #fff !important; font-weight: 600; font-size: 0.9rem; transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease; white-space: nowrap; }
+    .nav-cta:hover { background: var(--blue-bright); transform: translateY(-1px); box-shadow: 0 8px 22px -10px var(--blue-glow); }
+    .nav-toggle { display: none; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 10px; color: var(--ink-soft); width: 42px; height: 42px; align-items: center; justify-content: center; cursor: pointer; }
+    .mobile-nav { display: none; flex-direction: column; padding: 6px 24px 16px; }
+    .mobile-nav a { color: var(--ink-soft); padding: 11px 0; font-weight: 500; border-top: 1px solid var(--line); }
+    .site-header.open .mobile-nav { display: flex; }
+
+    /* ---------- Buttons ---------- */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 1rem; cursor: pointer; border: 1px solid transparent; transition: all 0.2s ease; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-bright); transform: translateY(-1px); box-shadow: 0 12px 32px -12px var(--blue-glow); }
+    .btn-ghost { background: rgba(255,255,255,0.02); color: var(--ink); border-color: var(--line); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.28); background: rgba(255,255,255,0.05); }
+
+    /* ---------- Hero (full-bleed cinematic image) ---------- */
+    .hero { position: relative; min-height: min(92vh, 880px); display: flex; align-items: center; overflow: hidden; padding: 40px 0; }
+    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 80% center; z-index: 0; will-change: transform; }
+    .hero-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
+        linear-gradient(90deg, rgba(11,21,36,0.97) 0%, rgba(11,21,36,0.86) 28%, rgba(11,21,36,0.45) 52%, rgba(11,21,36,0) 76%),
+        linear-gradient(180deg, rgba(11,21,36,0.4) 0%, transparent 20%, transparent 68%, var(--navy) 100%); }
+    .hero-inner { position: relative; z-index: 2; width: 100%; }
+    .hero-copy { max-width: min(520px, 48vw); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-bright); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; margin-bottom: 24px; background: rgba(43,124,211,0.08); }
+    .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue-bright); box-shadow: 0 0 8px var(--blue-bright); }
+    h1.hero-title { font-size: clamp(2.5rem, 5.4vw, 4rem); line-height: 1.03; font-weight: 800; letter-spacing: -0.035em; color: var(--ink); margin: 0 0 22px; }
+    .hero-sub { max-width: 540px; margin: 0 0 34px; font-size: clamp(1.02rem, 1.4vw, 1.18rem); color: var(--ink-soft); }
+    .hero-sub strong { color: var(--ink); font-weight: 600; }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Works-with strip */
+    .trust { padding: 40px 0 8px; text-align: center; }
+    .trust .cap { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 20px; }
+    .trust .marks { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 40px; }
+    .trust .marks span { font-size: 1.15rem; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: -0.01em; transition: color 0.25s ease; }
+    .trust .marks span:hover { color: rgba(255,255,255,0.9); }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: clamp(64px, 10vh, 112px) 0; }
+    .section-head { max-width: 700px; margin: 0 auto 52px; text-align: center; }
+    .kicker { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-bright); }
+    h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.08; font-weight: 800; letter-spacing: -0.025em; color: var(--ink); margin: 12px 0 16px; }
+    .lead { font-size: 1.13rem; color: var(--ink-soft); }
+    .divider { height: 1px; background: var(--line); max-width: var(--maxw); margin: 0 auto; }
+
+    /* Platform stages — alternating text + real product shot (reads as a Discover→Govern flow) */
+    .stages { display: flex; flex-direction: column; gap: clamp(48px, 8vh, 92px); }
+    .stage-row { display: flex; align-items: center; gap: clamp(28px, 5vw, 64px); }
+    .stage-row:nth-child(even) { flex-direction: row-reverse; }
+    .stage-text { flex: 1 1 40%; }
+    .step { display: block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue-bright); }
+    .step b { font-size: 0.85rem; opacity: 0.55; margin-right: 7px; }
+    .stage-text h3 { color: var(--ink); font-size: clamp(1.4rem, 2.6vw, 1.95rem); font-weight: 700; letter-spacing: -0.02em; margin: 10px 0 12px; }
+    .stage-text p { color: var(--ink-faint); font-size: 1.04rem; margin: 0; max-width: 480px; }
+    .shot { position: relative; flex: 1 1 56%; margin: 0; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #0d1830; box-shadow: 0 30px 70px -34px rgba(0,0,0,0.75); }
+    .shot img { width: 100%; height: auto; display: block; }
+    .shot figcaption { position: absolute; top: 10px; right: 10px; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); background: rgba(11,21,36,0.72); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+
+    /* Decidio sibling — a static premium banner (its own cream/gold brand world) */
+    .decidio-img { display: block; width: 100%; height: auto; border-radius: 20px; border: 1px solid rgba(195,154,75,0.32); box-shadow: 0 26px 64px -28px rgba(5,24,20,0.65); }
+
+    /* About / Company */
+    .about { text-align: center; max-width: 760px; margin: 0 auto; }
+    .about p { font-size: clamp(1.1rem, 2.2vw, 1.32rem); color: var(--ink-soft); line-height: 1.5; }
+    .about .signature { margin-top: 20px; color: var(--ink-faint); font-size: 0.95rem; }
+
+    .contact { text-align: center; }
+    .contact a.email { color: var(--blue-bright); font-weight: 600; }
+    .signup { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; width: 100%; flex-wrap: wrap; justify-content: center; }
+    .signup input[type="email"] { flex: 1; min-width: 220px; padding: 13px 18px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; font-family: inherit; transition: border-color 0.2s ease, background 0.2s ease; }
+    .signup input[type="email"]::placeholder { color: var(--ink-faint); }
+    .signup input[type="email"]:focus { outline: none; border-color: var(--blue); background: rgba(255,255,255,0.09); }
+
     /* Footer */
-    .footer {
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      opacity: 0.7;
-      text-align: center;
+    .site-footer { border-top: 1px solid var(--line); padding: 40px 0; }
+    .footer-in { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-in .copy { color: var(--ink-faint); font-size: 0.9rem; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: var(--ink-faint); font-size: 0.9rem; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* Reveal-on-scroll (progressive enhancement — visible by default without JS) */
+    .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .js .reveal.in { opacity: 1; transform: none; }
+    .js .reveal[data-d="1"] { transition-delay: 0.08s; }
+    .js .reveal[data-d="2"] { transition-delay: 0.16s; }
+    .js .reveal[data-d="3"] { transition-delay: 0.24s; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { min-height: 86vh; }
+      .hero-bg { object-position: 66% center; }
+      .hero-overlay { background: linear-gradient(180deg, rgba(11,21,36,0.82) 0%, rgba(11,21,36,0.4) 26%, rgba(11,21,36,0.4) 58%, var(--navy) 100%); }
+      .hero-copy { max-width: 100%; text-align: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .cta-row { justify-content: center; }
+      .stage-row, .stage-row:nth-child(even) { flex-direction: column; align-items: stretch; }
+      .stage-text p { max-width: 100%; }
+      .nav-center { display: none; }
+      .nav-toggle { display: inline-flex; }
     }
-    
-    .footer a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 8px;
-      transition: opacity 0.2s ease;
-    }
-    
-    .footer a:hover {
-      opacity: 1;
-    }
-    
-    /* Mobile responsiveness */
-    @media (max-width: 640px) {
-      .wrapper {
-        padding: 1.5rem 1rem 2rem 1rem;
-      }
-      
-      .logo {
-        width: 120px;
-        margin-bottom: 1.5rem;
-      }
-      
-      .signup-form {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-        gap: 1rem;
-      }
-      
-      .email-input {
-        max-width: 100%;
-      }
-    }
-    
     @media (max-width: 480px) {
-      .main-headline {
-        font-size: 1.6rem;
-      }
-      
-      .hero-tagline {
-        font-size: 1rem;
-      }
-      
-      .description {
-        font-size: 0.9rem;
-      }
+      .signup input[type="email"] { min-width: 100%; }
+      .signup .btn { width: 100%; }
+      .trust .marks { gap: 12px 26px; }
     }
-    
-    /* High contrast mode support */
-    @media (prefers-contrast: high) {
-      .email-input {
-        border-color: #fff;
-      }
-      
-      .submit-button {
-        background: #fff;
-        color: #0f1b2c;
-      }
-    }
-    
-    /* Reduced motion support */
     @media (prefers-reduced-motion: reduce) {
-      * {
-        transition: none !important;
-      }
-      
-      .submit-button:hover {
-        transform: none;
-      }
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      * { transition-duration: 0.001ms !important; }
     }
+    @media (prefers-contrast: more) { :root { --ink-soft: #eef3fa; --ink-faint: #c8d5e5; --line: rgba(255,255,255,0.3); } }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <img src="/CorporateLogo.png" alt="OmniTwin logo" class="logo">
-    
-    <h1 class="main-headline">We Recommend, You Decide</h1>
-    
-    <p class="hero-tagline">OmniTwin creates workflow intelligence that always asks before it acts.</p>
-    
-    <p class="description">
-      Sign up to follow our progress and get early-access invites to AI that demonstrates before it executes.
-    </p>
-    
-    <form action="https://formspree.io/f/mjkrwrvb" method="POST" class="signup-form">
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="you@company.com" 
-        required 
-        class="email-input"
-        aria-label="Email address"
-      >
-      <button type="submit" class="submit-button">Keep me posted</button>
-      
-      <!-- Hidden form fields -->
-      <input type="hidden" name="_subject" value="New early-access signup">
-      <input type="hidden" name="_next" value="https://omnitwin.ai/thanks.html">
-    </form>
-    
-    <footer class="footer">
-      <a href="/privacy.html">Privacy</a>
-      <span>|</span>
-      <a href="/terms.html">Terms</a>
-    </footer>
-  </div>
+  <a class="skip" href="#top">Skip to content</a>
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="OmniTwin home">
+        <img src="/logo-mark.png" alt=""><span>OmniTwin</span>
+      </a>
+      <nav class="nav-center" aria-label="Primary">
+        <a href="#platform">Platform</a>
+        <a href="#about">Company</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#early-access" class="nav-cta">Request information</a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Menu">
+      <a href="#platform">Platform</a>
+      <a href="#about">Company</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <img class="hero-bg" src="/hero.jpg" alt="" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="dot"></span>OmniTwin Technologies</span>
+          <h1 class="hero-title">Reveal hidden work.<br>Automate safely.<br>Compound ROI.</h1>
+          <p class="hero-sub">The work that runs your business happens <strong>between your systems of record</strong> — invisible to dashboards, RPA and process mining. OmniTwin reveals it, automates what matters, and governs every AI action.</p>
+          <div class="cta-row">
+            <a href="#early-access" class="btn btn-primary">Request information</a>
+            <a href="#platform" class="btn btn-ghost">See the platform</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container trust reveal">
+      <div class="cap">Built for the systems where work happens</div>
+      <div class="marks">
+        <span>SAP</span><span>Salesforce</span><span>Outlook</span><span>Excel</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Platform -->
+    <section class="block" id="platform">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">The platform</span>
+          <h2>You can't automate what you can't see.</h2>
+          <p class="lead">
+            Most enterprise work happens between the systems of record — in email, spreadsheets and the cross-app
+            steps no dashboard can see. OmniTwin discovers how that work actually happens, helps you optimize it,
+            automates what matters, and governs every AI action — in one architecture.
+          </p>
+        </div>
+        <div class="stages">
+          <div class="stage-row reveal">
+            <div class="stage-text">
+              <span class="step"><b>01</b>Discover</span>
+              <h3>See how work really happens</h3>
+              <p>Designed to observe how work happens across SAP, Salesforce, Outlook and Excel — including the cross-app steps no dashboard captures. Privacy-first: on-device, no full-screen capture.</p>
+            </div>
+            <figure class="shot"><img src="/Discover.jpg" alt="OmniTwin workflow-intelligence view: a discovered PO-processing workflow and its variants" loading="lazy"><figcaption>Sample data</figcaption></figure>
+          </div>
+          <div class="stage-row reveal">
+            <div class="stage-text">
+              <span class="step"><b>02</b>Optimize</span>
+              <h3>Find what's worth improving</h3>
+              <p>Surfaces the repetitive, high-value workflows — and what they cost you — and benchmarks them, so you fix and automate the right work, not everything.</p>
+            </div>
+            <figure class="shot"><img src="/Optimize.jpg" alt="OmniTwin benchmarking view comparing your process against cross-industry data" loading="lazy"><figcaption>Sample data</figcaption></figure>
+          </div>
+          <div class="stage-row reveal">
+            <div class="stage-text">
+              <span class="step"><b>03</b>Automate</span>
+              <h3>Run it, and keep it running</h3>
+              <p>Turns proven workflows into automations that start supervised and earn autonomy as they prove themselves — detecting failures, proposing fixes, and always letting a human pull one back.</p>
+            </div>
+            <figure class="shot"><img src="/Automate.jpg" alt="OmniTwin automations view: lifecycle monitoring, exceptions and assisted fixes" loading="lazy"><figcaption>Sample data</figcaption></figure>
+          </div>
+          <div class="stage-row reveal">
+            <div class="stage-text">
+              <span class="step"><b>04</b>Govern</span>
+              <h3>Trust every AI action</h3>
+              <p>Prevention, not detection — each action is checked against policy and blocked before it runs, not flagged after the damage. Fail-closed, with a tamper-evident, independently verifiable audit trail built for EU AI Act traceability.</p>
+            </div>
+            <figure class="shot"><img src="/Govern.jpg" alt="OmniTwin governance view: tamper-evident audit trail with chain-integrity verification" loading="lazy"><figcaption>Sample data</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Also from OmniTwin Technologies — Decidio is a SEPARATE product (not built on the OmniTwin platform) -->
+    <section class="block" id="products">
+      <div class="container">
+        <img class="decidio-img reveal" src="/Decidio.jpg" loading="lazy"
+          alt="Also from OmniTwin Technologies — Decidio, the system of record for enterprise authority. The authority layer that creates enterprise memory: capture team decisions, govern approvals, and apply company policy to agentic workflows into searchable, auditable records. Coming soon at decidioai.com.">
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Company -->
+    <section class="block" id="about">
+      <div class="container about reveal">
+        <span class="kicker">Company</span>
+        <p style="margin-top:14px">
+          OmniTwin Technologies builds governance-first enterprise software. If you can't see the work, you can't
+          improve it; if you can't measure it, you can't optimize it; if you can't verify it, you can't trust it.
+          We're building to do all three — and keep people in control.
+        </p>
+        <div class="signature">— OmniTwin Technologies</div>
+      </div>
+    </section>
+
+    <!-- Contact / request information -->
+    <section class="block" id="early-access">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Get in touch</span>
+          <h2>Request information</h2>
+          <p class="lead">Leave your work email and we'll be in touch.</p>
+        </div>
+        <form action="https://formspree.io/f/mjkrwrvb" method="POST" class="signup reveal" aria-label="Request information">
+          <input type="email" name="email" placeholder="you@company.com" required aria-label="Work email">
+          <button type="submit" class="btn btn-primary">Request information</button>
+          <input type="hidden" name="_subject" value="OmniTwin — information request">
+        </form>
+        <p id="contact" class="contact" style="margin-top:34px;color:var(--ink-faint)">
+          Or reach us directly at <a class="email" href="mailto:chris@omnitwin.ai">chris@omnitwin.ai</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-in">
+      <span class="copy">© 2026 OmniTwin Technologies Inc.</span>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="mailto:chris@omnitwin.ai">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    var header = document.getElementById('header');
+    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu
+    var toggle = document.querySelector('.nav-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var open = header.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      header.querySelectorAll('.mobile-nav a').forEach(function (a) {
+        a.addEventListener('click', function () { header.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    }
+
+    // Subtle scroll parallax on the hero image (disabled for reduced-motion).
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var heroBg = document.querySelector('.hero-bg');
+      if (heroBg) {
+        heroBg.style.transform = 'scale(1.06)';
+        window.addEventListener('scroll', function () {
+          var y = window.scrollY;
+          if (y < window.innerHeight) heroBg.style.transform = 'scale(1.06) translateY(' + (y * 0.10) + 'px)';
+        }, { passive: true });
+      }
+    }
+  </script>
 </body>
 </html>
